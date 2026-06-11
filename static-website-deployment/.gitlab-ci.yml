@@ -1,0 +1,20 @@
+stages:
+  - build
+  - test
+  - deploy
+
+build:
+  stage: build
+  script:
+    - echo "Building website"
+
+test:
+  stage: test
+  script:
+    - grep "Hello" index.html
+
+deploy:
+  stage: deploy
+  script:
+    - mkdir deploy
+    - cp index.html deploy/
